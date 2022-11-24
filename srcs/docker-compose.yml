@@ -63,7 +63,7 @@ services:
     networks:
       - inception
     volumes:
-      - mariadb:/var/lib/mysql/${MYSQL_DB_NAME}:rw
+      - mariadb:/var/lib/mysql:rw
   # redis server image conf
   redis:
     restart: always

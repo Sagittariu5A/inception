@@ -4,7 +4,7 @@ WORKDIR /var/www/adminer
 
 RUN apt update && apt install -y php7.3 php7.3-fpm php7.3-mysql wget
 
-COPY www.conf /etc/php/7.3/fpm/pool.d/www.conf
+COPY conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
 RUN service php7.3-fpm start
 

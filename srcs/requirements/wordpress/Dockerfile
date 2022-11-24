@@ -10,9 +10,9 @@ RUN apt update && apt install -y php7.3 php7.3-fpm php7.3-mysql \
 RUN wget -q https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
 		-O /usr/local/bin/wp && chmod +x /usr/local/bin/wp
 
-COPY tools/www.conf /etc/php/7.3/fpm/pool.d/www.conf
+COPY conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-COPY tools/entrypoint.sh tools/wp-download.sh /tools/
+COPY tools /tools
 
 RUN chmod +x /tools/entrypoint.sh /tools/wp-download.sh
 
@@ -20,4 +20,4 @@ RUN /tools/wp-download.sh
 
 RUN service php7.3-fpm start
 
-ENTRYPOINT ["/tools/entrypoint.sh", "/usr/sbin/php-fpm7.3", "--nodaemonize"]
+ENTRYPOINT ["/tools/entrypoint.sh"]

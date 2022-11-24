@@ -4,7 +4,7 @@ ARG DOMAIN_NAME
 
 RUN apt update && apt install -y nginx openssl
 
-COPY config/nginx.conf /etc/nginx/sites-enabled/${DOMAIN_NAME}
+COPY conf/nginx.conf /etc/nginx/sites-enabled/${DOMAIN_NAME}
 
 WORKDIR /root
 

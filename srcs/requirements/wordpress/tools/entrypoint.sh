@@ -24,4 +24,4 @@ chmod -R g+w /var/www
 
 echo " Wordpress starting php-fpm ....."
 
-$@ # this means run CMD [] params (php-fpm)
+/usr/sbin/php-fpm7.3 --nodaemonize
